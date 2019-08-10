@@ -1,0 +1,17 @@
+
+
+# js中参数执行方式
+
+# 如果common为空的话，将common赋值为 {}
+(common || (common = {}));
+
+
+# 直接执行函数将common输出
+(function(common){
+	consloe.log(common);	
+})(common = 2)
+
+# 
+(function(common){
+	consloe.log(common);
+})(common || (common = {}))
