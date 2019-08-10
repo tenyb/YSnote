@@ -5,3 +5,12 @@ class StateMachine(object):
 	@property
 	def initState(self):
 		raise NotImplementedError
+
+	def findStateByName(self, name):
+		return self._findStateByName(name)
+		
+	def _findStateByName(self, name, silen):
+		return 
+		
+	def addState(self, state):
+		pass
