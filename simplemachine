@@ -1,0 +1,27 @@
+class StartCommand(Command):
+	pass
+class NoUseCommand(Command):
+	pass
+class GotoBetCommand(Command):
+	pass
+class BetCommand(Command):
+	pass
+class FinishCommand(Command):
+	pass
+	
+
+class DemoActions(object):
+	@classmethod
+	def entryIdleAction(cls, cmd):
+		print "enter idle"
+		
+	@classmethod
+	def gotoBetAction(cls, cmd):
+		if not isinstance(cmd, GotoBetCommand):
+			return State.STATE_CONTINUE
+		return cmd.findStateByName('bet')
+		
+	@classmethod
+	def doNothingAction(self, cmd):
+		return State.STATE_CONTINUE
+		
