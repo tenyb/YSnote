@@ -1,0 +1,43 @@
+
+# 按位，与或非
+
+# 或		|
+0 | 0	0
+0 | 1	1
+1 | 0	1
+1 | 1	1
+
+# 与		&
+0 & 0	0
+0 & 1	0
+1 & 0	0
+1 & 1	1
+
+# ~
+~0	1
+~1	0
+
+
+# 或		||
+false || false		false
+false || true		true
+true || false		true
+true || true		true
+
+
+# 与		&&
+false && false		false
+false && true		true
+true && false		true
+true && true		true
+
+
+
+# 非		!
+!false		true
+!true		false
+
+
+
+
+
