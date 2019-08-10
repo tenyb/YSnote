@@ -18,6 +18,16 @@
 ~1	0
 
 
+python
+或   与   非
+or  and   not
+
+js
+或   与   非
+||  &&    ！
+
+
+
 # 或		||
 false || false		false
 false || true		true
