@@ -1,0 +1,15 @@
+class Command(object):
+	def __init__(self):
+		self.machine = None
+		self.processed = 0
+		self.timestamp = uttime.getCurrentTimestampFloat()
+		
+	def findStateByName(self, name):
+		assert self.machine is not None
+		return self.machine.findStateByName(name)
+		
+	def beforeStateTransform(self, oldState, newState):
+		pass
+		
+	def afterStateTransform(self, oldState, newState):
+		pass
