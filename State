@@ -1,0 +1,57 @@
+class State(object):
+	STATE_CONTINUE = None
+	
+	STATE_DONE = 1
+	
+	__slots__ = ['name', 'parent', 'childrenList', '_ancestorTreeList',
+		'entryActionList', 'actionList', 'exitActionList', 'machine']
+		
+	def __init__(self, name):
+		self.name = utstr.toUTF8(name)
+		self.parent = None
+		self.childrenList = []
+		self._ancestorTreeList = []
+		self.entryActionList = []
+		self.actionList = []
+		self.exitActionList = []
+		self.machine = []
+		
+	@property
+	def ancestorTreeList(self):
+		pass
+		
+	def findStateByName(self,name):
+		pass
+		
+	def addChildState(self, child):
+		pass
+		
+	def ancestorsOf(self, cmd):
+		pass
+		
+	def processCommand(self, cmd):
+		pass
+		
+	def _calcExitAndEntryPath(cls, fromST, toST):
+		pass
+		
+	def _transform(cls, oldState, newState, cmd):
+		pass
+		
+	def addAction(self, action):
+		pass
+		
+	def insertEntryAction(self, action):
+		pass
+		
+	def addEntryAction(self, index, action):
+		pass
+		
+	def processEntry(self, cmd):
+		pass
+		
+	def insertExitAction(self, index, action):
+		pass
+		
+	def processExits(self, cmd):
+		pass
