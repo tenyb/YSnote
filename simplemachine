@@ -25,3 +25,39 @@ class DemoActions(object):
 	def doNothingAction(self, cmd):
 		return State.STATE_CONTINUE
 		
+class IdleState(State):
+	def __init__(self):
+		super(IdleState, self).__init__('idle')
+		self.addEntryAction(DemoActions.enterIdleAction)
+		self.addExitAction(DemoActions.leaveIdleAction)
+		self.addAction(DemoActions.gotoBetAction)
+		
+class DemoStateMachine(StateMachine):
+	def __init__(self):
+		super(DemoStateMachine, self).__init__()
+		self._initIdleState = self.addState(IdleState())
+		playState = PlayState()
+		playState.addChildState(BetState())
+		finishState = FinishState()
+		finishState.addChildState(SettleState())
+		self.addState(playState)
+		self.addState(finishState)
+		
+	@property
+	def initState(self):
+		return self._initIdleState
+		
+if __name__ == "__main__":
+	try:
+		sm = DemoStateMachine()
+		initState = sm.initState
+		initState._transform(None, initState, StartCommand())
+		
+		curState = initState
+		curState = curState.processCommand(GotoBetCommand())
+		
+	except:
+		pass
+		
+		
+		
