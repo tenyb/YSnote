@@ -1,0 +1,16 @@
+
+const		var 	let
+
+const
+是初始化的数值，初始化之后该数值不能变化，否则会报错。
+Uncaught TypeError: Assignment to constant variable(未捕捉类型错误：赋值给常量)
+
+let
+是块级作用域，定义不影响外部
+
+
+var
+定义变量
+
+
+
