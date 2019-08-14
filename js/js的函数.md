@@ -22,7 +22,46 @@ function sumAll() {
 ```
 ### 函数问题
 > 定义的函数会自动成为窗口函数
-> myfuntion()  ==   window.myfunction()
+>
+>myfuntion()  ==   window.myfunction()
+
+
+### call() 和 apply() 之间的区别
+
+> 不同之处是：
+>
+> call() 方法分别接受参数。
+>
+>apply() 方法接受数组形式的参数。
+>
+>如果要使用数组而不是参数列表，则 apply() 方法非常方便。
+
+```js
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+```
+```js
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.call(person1, "Oslo", "Norway");
+```
+
+
 
 
 
